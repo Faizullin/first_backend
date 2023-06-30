@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Загрузка и скачивание файлов</title>
+</head>
+<body>
+    <p class="test-text">HI</p>
+    <h1>Загрузка и скачивание файлов</h1>
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Загрузить</button>
+    </form>
+    <hr>
+    <h2>Загруженные файлы</h2>
+    <ul>
+        {% for filename in filenames %}
+            <li><a href="/download/{{ filename }}">{{ filename }}</a></li>
+        {% endfor %}
+    </ul>
+    <style>
+        .test-text {
+            color: red;
+            font-size: 100px;
+            font-weight: 100;
+            border: 1px solid red;
+            background-color: aquamarine;
+        }
+    </style>
+</body>
+</html>
